@@ -13,8 +13,8 @@ let dog = {
   status = "neutral";
 }
 function setNewImage() {
-  document.getElementById('image1').src ="assets/img/image3.png"
+  document.getElementById('image1').src ="assets/img/image3.png";
 }
 function setOldImage() {
-  document.getElementById('image1').src ="assets/img/image1.png"
+  document.getElementById('image1').src ="assets/img/image1.png";
 }
