@@ -18,3 +18,10 @@ function setNewImage() {
 function setOldImage() {
   document.getElementById('image1').src ='assets/img/image1.png';
 }
+// afficher les icons de nurriture & activités
+function displayFood(){
+  document.getElementById('feedThem').style.visibility = 'visible';
+}
+function displayActivities(){
+  document.getElementById('playWithThem').style.visibility = 'visible';
+}

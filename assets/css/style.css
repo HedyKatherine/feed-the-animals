@@ -1,0 +1,19 @@
+section{
+  width: 70vw;
+}
+
+/* les icons */
+.fas{
+  scale: 5;
+  margin: 5rem;
+  border: 1px solid #f1ddcf;
+  border-radius: 5px;
+}
+.fas:hover{
+  opacity: .9;
+  scale: 5.7;
+}
+/* cacher les icons des nurriture et activités */
+.some{
+  visibility: hidden;
+}
