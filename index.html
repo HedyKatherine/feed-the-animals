@@ -10,32 +10,35 @@
   <title>feed the animals</title>
 </head>
 <body>
+  <!-- ici on peux garder de l'espace pour afficher nos petits messages rigolos et le score -->
+  <section id="place_for_messages" class="container d-flex justify-content-center">
+    <div class="row">
+      <p id="moodText" class="col-md-12"></p>
+      <p id="" class="col-md-12"></p>
+      <p id="" class="col-md-12"></p>
+    </div>
+  </section>
   <div class="container-fluid text-center">
-        <h1>Changez l'image </h1>
+        <h1>notre petit chaton</h1>
         <div class="row justify-content-center">
             <div class="col-12 col-lg-6 col-xl-4">
 
             <img id="image1" onmouseover="setNewImage()" onmouseout="setOldImage()" src="assets/img/image1.png" alt="un chaton" width="300">
+            <p>Votre score: </p>
+            <p id="score"></p>
             </div>
         </div>
     </div>
-    <!-- ici on peux garder de l'espace pour afficher nos petits messages rigolos et le score -->
-    <section id="place_for_messages" class="container d-flex justify-content-center">
-      <div class="row">
-        <p id="" class="col-md-12"></p>
-        <p id="" class="col-md-12"></p>
-        <p id="" class="col-md-12"></p>
-      </div>
-    </section>
+
     <!-- ici on affiche les icons permettant de jouer et gagner les points: les deux sections: Nourriture et Activités -->
     <section id="choose_food" class="container d-flex justify-content-center">
       <div class="row">
         <button class="col-md-2 btn-lg btn-secondary" type="button" name="button" onclick="displayFood()">Nourriture</button>
         <div id="feedThem" class="some food col-md-12 d-flex justify-content-between">
-          <i class="fas fa-5x fa-ice-cream"></i>
-          <i class="fas fa-5x fa-pepper-hot"></i>
-          <i class="fas fa-5x fa-fish"></i>
-          <i class="fas fa-5x fa-carrot"></i>
+          <i class="fas fa-5x fa-ice-cream" onclick="moodReaction('happy')"></i>
+          <i class="fas fa-5x fa-pepper-hot" onclick="moodReaction('furious')"></i>
+          <i class="fas fa-5x fa-fish" onclick="moodReaction('excited')"></i>
+          <i class="fas fa-5x fa-carrot" onclick="moodReaction('moody')"></i>
           <i class="fas fa-5x fa-pizza-slice"></i>
         </div>
       </div>
