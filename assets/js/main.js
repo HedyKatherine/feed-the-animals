@@ -4,14 +4,14 @@ let cat = {
   mood = 'happy';
   weight = 1;
   status = 'neutral';
-}
+};
 // our second object
 let dog = {
   name = 'Doggy';
   mood = 'anxious';
   weight = 11;
   status = 'neutral';
-}
+};
 function setNewImage() {
   document.getElementById('image1').src ='assets/img/image3.png';
 }
