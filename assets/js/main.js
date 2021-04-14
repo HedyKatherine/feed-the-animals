@@ -1,15 +1,15 @@
 // our first object
 let cat = {
   name : 'Kitty',
-  mood : 'happy',
-  weight : 1,
+  mood : 'neutral',
+  weight : 'neutral',
   status : 'neutral',
 };
 // our second object
 let dog = {
   name : 'Doggy',
-  mood : 'anxious',
-  weight : 11,
+  mood : 'neutral',
+  weight : 'neutral',
   status : 'neutral',
 };
 function setNewImage() {
@@ -31,17 +31,25 @@ if (paramètreMood == 'happy'){
   document.getElementById('image1').src ='assets/img/image1.png';
   document.getElementById('moodText').innerHTML = 'Yummy ! One more please!';
   document.getElementById('score').innerHTML = 50;
+  cat.mood = 'happy';
+  console.log(cat);
 }else if(paramètreMood == 'furious'){
   document.getElementById('image1').src ='assets/img/image2.png';
   document.getElementById('moodText').innerHTML = 'Disgusting ! Eat it by yourself !';
   document.getElementById('score').innerHTML = 10;
+  cat.mood = 'furious';
+  console.log(cat);
 }else if(paramètreMood == 'moody'){
   document.getElementById('image1').src ='assets/img/image5.png';
   document.getElementById('moodText').innerHTML = 'You\'re so boring !';
   document.getElementById('score').innerHTML = 20;
+  cat.mood = 'mood';
+  console.log(cat);
 }else if(paramètreMood == 'excited'){
   document.getElementById('image1').src ='assets/img/image4.png';
   document.getElementById('moodText').innerHTML = 'Go ahead ! Continue !';
   document.getElementById('score').innerHTML = 40;
+  cat.mood = 'excited';
+  console.log(cat);
 }
 }
