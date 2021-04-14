@@ -53,15 +53,29 @@ if (paramètreMood == 'happy'){
   console.log(cat);
 }
 }
-/*
 // new fonction to change weight of cat
 function changeCatWeight(weightParameter) {
-  switch (weightParameter == 'neutral') {
-    case expression:
-
+  let reaction;
+  let weightScore;
+  let image = document.getElementById('image1');
+  switch (weightParameter) {
+    case 'light'  :
+      reaction = 'Yes ! I love to play !';
+      weightScore = 50;
+      cat.weight = 'light';
+      console.log(cat);
       break;
+    case 'medium' :
+    reaction = 'I\'m so sleepy... zzz...';
+    weightScore = 70;
+    image.src = 'assets/img/image8.png';
+    cat.weight = 'medium';
+    console.log(cat);
+    break;
     default:
-
+  reaction = 'test';
+  weightScore = 0;
   }
+  document.getElementById('moodText').innerHTML = reaction;
+  document.getElementById('score').innerHTML = weightScore;
 }
-*/
