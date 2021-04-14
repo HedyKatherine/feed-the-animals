@@ -53,3 +53,15 @@ if (paramètreMood == 'happy'){
   console.log(cat);
 }
 }
+/*
+// new fonction to change weight of cat
+function changeCatWeight(weightParameter) {
+  switch (weightParameter == 'neutral') {
+    case expression:
+
+      break;
+    default:
+
+  }
+}
+*/
