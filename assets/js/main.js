@@ -109,20 +109,22 @@ function insertInGlobalScore(){
   document.getElementById('yourSumScore').innerHTML = sum;
 }
 // new fonction to change weight of cat
-function changeCatWeight(weightParameter) {
-  let reaction;
-  let weightScore;
-  let image = document.getElementById('image1');
-  switch (weightParameter) {
-    case 'light'  :
-      reaction = 'Yes ! I love to play !';
-      weightScore = 50;
-      cat.weight = 'light';
-      console.log(cat);
-      break;
-    case 'medium' :
-    reaction = 'I\'m so sleepy... zzz...';
-    weightScore = 70;
-    image.src = 'assets/img/image8.png';
-    cat.weight = 'medium';
-  }
+// function changeCatWeight(weightParameter) {
+//   let reaction;
+//   let weightScore;
+//   let image = document.getElementById('image1');
+//   switch (weightParameter) {
+//     case 'light'  :
+//       reaction = 'Yes ! I love to play !';
+//       weightScore = 50;
+//       cat.weight = 'light';
+//       console.log(cat);
+//       break;
+//     case 'medium' :
+//     reaction = 'I\'m so sleepy... zzz...';
+//     weightScore = 70;
+//     image.src = 'assets/img/image8.png';
+//     cat.weight = 'medium';
+//   }
+
+
