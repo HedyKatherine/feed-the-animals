@@ -16,3 +16,11 @@ section{
 .some{
   visibility: hidden;
 }
+#yourSumScore{
+  width: 6vw;
+  height: 12vh;
+  border: 3px solid red;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: bold;
+}
