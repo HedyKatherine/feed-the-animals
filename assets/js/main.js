@@ -27,32 +27,97 @@ function displayActivities(){
 }
 // changer l'humeur du chaton
 function moodReaction(parametreMood){
-if (parametreMood == 'happy'){
-  document.getElementById('image1').src ='assets/img/image1.png';
-  document.getElementById('moodText').innerHTML = 'Yummy ! One more please!';
-  document.getElementById('score').innerHTML = 50;
-  cat.mood = 'happy';
-  console.log(cat);
-}else if(parametreMood == 'furious'){
-  document.getElementById('image1').src ='assets/img/image2.png';
-  document.getElementById('moodText').innerHTML = 'Disgusting ! Eat it by yourself !';
-  document.getElementById('score').innerHTML = 10;
-  cat.mood = 'furious';
-  console.log(cat);
-}else if(parametreMood == 'moody'){
-  document.getElementById('image1').src ='assets/img/image5.png';
-  document.getElementById('moodText').innerHTML = 'You\'re so boring !';
-  document.getElementById('score').innerHTML = 20;
-  cat.mood = 'mood';
-  console.log(cat);
-}else if(parametreMood == 'excited'){
-  document.getElementById('image1').src ='assets/img/image4.png';
-  document.getElementById('moodText').innerHTML = 'Go ahead ! Continue !';
-  document.getElementById('score').innerHTML = 40;
-  cat.mood = 'excited';
-  console.log(cat);
-}
+  // sumOfScores();
+  if (parametreMood == 'happy'){
+    document.getElementById('image1').src ='assets/img/image1.png';
+    document.getElementById('moodText').innerHTML = 'Yummy ! One more please!';
+    document.getElementById('score').text = 70;
+    document.getElementById('mood-bar').style.width = '70%';
+    document.getElementById('mood-bar').innerHTML = '70%';
+    document.getElementById('weight-bar').style.width = '80%';
+    document.getElementById('weight-bar').style.background = 'red';
+    document.getElementById('weight-bar').innerHTML = '80%';
+    cat.mood = 'happy';
+    cat.weight = 'extra';
+    cat.status = '';
+    console.log(cat);
+  }else if(parametreMood == 'furious'){
+    document.getElementById('image1').src ='assets/img/image2.png';
+    document.getElementById('moodText').innerHTML = 'Disgusting ! Eat it by yourself !';
+    document.getElementById('score').text = 10;
+    document.getElementById('mood-bar').style.width = '10%';
+    document.getElementById('mood-bar').innerHTML = '10%';
+    document.getElementById('weight-bar').style.width = '10%';
+    document.getElementById('weight-bar').innerHTML = '10%';
+    document.getElementById('weight-bar').style.background = 'red';
+    cat.mood = 'furious';
+    cat.weight = 'light';
+    cat.status = '';
+    console.log(cat);
+  }else if(parametreMood == 'moody'){
+    document.getElementById('image1').src ='assets/img/image5.png';
+    document.getElementById('moodText').innerHTML = 'You\'re so boring !';
+    document.getElementById('score').text = 20;
+    document.getElementById('mood-bar').style.width = '20%';
+    document.getElementById('mood-bar').innerHTML = '20%';
+    document.getElementById('weight-bar').style.width = '20%';
+    document.getElementById('weight-bar').innerHTML = '20%';
+    document.getElementById('weight-bar').style.background = 'green';
+    cat.mood = 'moody';
+    cat.weight = "normal";
+    cat.status = '';
+    console.log(cat);
+  }else if(parametreMood == 'excited'){
+    document.getElementById('image1').src ='assets/img/image4.png';
+    document.getElementById('moodText').innerHTML = 'Go ahead ! Continue !';
+    document.getElementById('score').text = 40;
+    document.getElementById('mood-bar').style.width = '90%';
+    document.getElementById('mood-bar').innerHTML = '90%';
+    document.getElementById('weight-bar').style.width = '50%';
+    document.getElementById('weight-bar').innerHTML = '50%';
+    document.getElementById('weight-bar').style.background = 'green';
+    cat.mood = 'excited';
+    cat.weight = 'normal';
+    cat.status = '';
+    console.log(cat);
+  }else if(parametreMood == 'excited-too-much'){
+    document.getElementById('image1').src ='assets/img/image14.png';
+    document.getElementById('moodText').innerHTML = 'Wow I can\'t stop!';
+    document.getElementById('score').text = 40;
+    document.getElementById('mood-bar').style.width = '90%';
+    document.getElementById('mood-bar').innerHTML = '90%';
+    document.getElementById('weight-bar').style.width = '80%';
+    document.getElementById('weight-bar').innerHTML = '80%';
+    document.getElementById('weight-bar').style.background = 'red';
+    cat.mood = 'excited-too-much';
+    cat.weight = 'normal';
+    cat.status = '';
+    console.log(cat);
+  }
 insertInGlobalScore();
+
+}
+
+// la partie du code permettant d'avoir la somme totale des points
+let sum = 0;
+let yourGlobalScore = [];
+function insertInGlobalScore(){
+  let score = parseInt(document.getElementById('score').text);
+  document.getElementById('score').innerHTML = score;
+  yourGlobalScore.push(score);
+  sum += score;
+  document.getElementById('yourSumScore').innerHTML = sum;
+}
+
+// la partie du code permettant d'avoir la somme totale des points
+let sum = 0;
+let yourGlobalScore = [];
+function insertInGlobalScore(){
+  let score = parseInt(document.getElementById('score').text);
+  document.getElementById('score').innerHTML = score;
+  yourGlobalScore.push(score);
+  sum += score;
+  document.getElementById('yourSumScore').innerHTML = sum;
 }
 // new fonction to change weight of cat
 function changeCatWeight(weightParameter) {
@@ -71,23 +136,4 @@ function changeCatWeight(weightParameter) {
     weightScore = 70;
     image.src = 'assets/img/image8.png';
     cat.weight = 'medium';
-    console.log(cat);
-    break;
-    default:
-  reaction = 'test';
-  weightScore = 0;
   }
-  document.getElementById('moodText').innerHTML = reaction;
-  document.getElementById('score').innerHTML = weightScore;
-}
-
-// la partie du code permettant d'avoir la somme totale des points
-let sum = 0;
-let yourGlobalScore = [];
-function insertInGlobalScore(){
-  let score = parseInt(document.getElementById('score').text);
-  document.getElementById('score').innerHTML = score;
-  yourGlobalScore.push(score);
-  sum += score;
-  document.getElementById('yourSumScore').innerHTML = sum;
-}

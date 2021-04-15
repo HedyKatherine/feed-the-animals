@@ -1,7 +1,18 @@
-section{
-  width: 70vw;
+body{
+  margin: 1rem;
+  padding: 1rem;
 }
-
+section{
+  width: 60vw;
+}
+/* le aside avec le compteur du score global */
+#countDown{
+  float: left;
+}
+#star_score{
+  float:right;
+  margin: 2rem;
+}
 /* les icons */
 .fas{
   margin: 5rem;
@@ -15,4 +26,42 @@ section{
 /* cacher les icons des nurriture et activités */
 .some{
   visibility: hidden;
+}
+
+#yourSumScore{
+  width: 6vw;
+  height: 12vh;
+  border: 3px solid red;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: bold;
+}
+/* progress bar */
+#progress-bar-div{
+  width: 20vw;
+  float: right;
+  margin: 2rem;
+}
+#mood-bar{
+  height: 5vh;
+  width: 0%;
+  padding: 0;
+  background-color: blue;
+}
+.progress{
+  width: 25vw;
+  height: 5vh;
+  padding: 0;
+}
+#weight-bar{
+  background-color: green;
+  height: 5vh;
+  width: 0%;
+  padding: 0;
+}
+#status-bar{
+  background-color: yellow;
+  height: 5vh;
+  width: 0%;
+  padding: 0;
 }
