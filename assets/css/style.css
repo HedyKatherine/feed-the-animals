@@ -6,8 +6,11 @@ section{
   width: 60vw;
 }
 /* le aside avec le compteur du score global */
+#countDown{
+  float: left;
+}
 #star_score{
-  float:left;
+  float:right;
   margin: 2rem;
 }
 /* les icons */
