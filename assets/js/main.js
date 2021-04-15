@@ -108,17 +108,6 @@ function insertInGlobalScore(){
   sum += score;
   document.getElementById('yourSumScore').innerHTML = sum;
 }
-
-// la partie du code permettant d'avoir la somme totale des points
-let sum = 0;
-let yourGlobalScore = [];
-function insertInGlobalScore(){
-  let score = parseInt(document.getElementById('score').text);
-  document.getElementById('score').innerHTML = score;
-  yourGlobalScore.push(score);
-  sum += score;
-  document.getElementById('yourSumScore').innerHTML = sum;
-}
 // new fonction to change weight of cat
 function changeCatWeight(weightParameter) {
   let reaction;
