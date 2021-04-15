@@ -26,26 +26,26 @@ function displayActivities(){
   document.getElementById('playWithThem').style.visibility = 'visible';
 }
 // changer l'humeur du chaton
-function moodReaction(paramètreMood){
-if (paramètreMood == 'happy'){
+function moodReaction(parametreMood){
+if (parametreMood == 'happy'){
   document.getElementById('image1').src ='assets/img/image1.png';
   document.getElementById('moodText').innerHTML = 'Yummy ! One more please!';
   document.getElementById('score').innerHTML = 50;
   cat.mood = 'happy';
   console.log(cat);
-}else if(paramètreMood == 'furious'){
+}else if(parametreMood == 'furious'){
   document.getElementById('image1').src ='assets/img/image2.png';
   document.getElementById('moodText').innerHTML = 'Disgusting ! Eat it by yourself !';
   document.getElementById('score').innerHTML = 10;
   cat.mood = 'furious';
   console.log(cat);
-}else if(paramètreMood == 'moody'){
+}else if(parametreMood == 'moody'){
   document.getElementById('image1').src ='assets/img/image5.png';
   document.getElementById('moodText').innerHTML = 'You\'re so boring !';
   document.getElementById('score').innerHTML = 20;
   cat.mood = 'mood';
   console.log(cat);
-}else if(paramètreMood == 'excited'){
+}else if(parametreMood == 'excited'){
   document.getElementById('image1').src ='assets/img/image4.png';
   document.getElementById('moodText').innerHTML = 'Go ahead ! Continue !';
   document.getElementById('score').innerHTML = 40;
