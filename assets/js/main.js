@@ -108,17 +108,6 @@ function insertInGlobalScore(){
   sum += score;
   document.getElementById('yourSumScore').innerHTML = sum;
 }
-
-// la partie du code permettant d'avoir la somme totale des points
-let sum = 0;
-let yourGlobalScore = [];
-function insertInGlobalScore(){
-  let score = parseInt(document.getElementById('score').text);
-  document.getElementById('score').innerHTML = score;
-  yourGlobalScore.push(score);
-  sum += score;
-  document.getElementById('yourSumScore').innerHTML = sum;
-}
 // new fonction to change weight of cat
 function changeCatWeight(weightParameter) {
   let reaction;
@@ -137,3 +126,21 @@ function changeCatWeight(weightParameter) {
     image.src = 'assets/img/image8.png';
     cat.weight = 'medium';
   }
+  // COUNT DOUNT
+
+  document.addEventListener('DOMContentLoaded', () =>{
+  const timeLeftDisplay = document.querySelector('#time-left');
+  const startBtn = document.querySelector('#start-button');
+   let timeLeft = 90;
+
+  function countDown(){
+    setInterval(function(){
+    if (timeLeft <= 0) {
+      clearInterval(timeLeft = 0);
+    }
+      timeLeftDisplay.innerHTML = timeLeft;
+      timeLeft -=1;
+    },1000);
+  }
+    startBtn.addEventListener('click', countDown );
+  });
