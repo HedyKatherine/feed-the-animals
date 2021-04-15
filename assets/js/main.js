@@ -126,3 +126,5 @@ function insertInGlobalScore(){
 //     image.src = 'assets/img/image8.png';
 //     cat.weight = 'medium';
 //   }
+
+
