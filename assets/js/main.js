@@ -30,29 +30,39 @@ function moodReaction(parametreMood){
 if (parametreMood == 'happy'){
   document.getElementById('image1').src ='assets/img/image1.png';
   document.getElementById('moodText').innerHTML = 'Yummy ! One more please!';
-  document.getElementById('score').innerHTML = 50;
+  document.getElementById('score').text = 50;
   cat.mood = 'happy';
   console.log(cat);
 }else if(parametreMood == 'furious'){
   document.getElementById('image1').src ='assets/img/image2.png';
   document.getElementById('moodText').innerHTML = 'Disgusting ! Eat it by yourself !';
-  document.getElementById('score').innerHTML = 10;
+  document.getElementById('score').text = 10;
   cat.mood = 'furious';
   console.log(cat);
 }else if(parametreMood == 'moody'){
   document.getElementById('image1').src ='assets/img/image5.png';
   document.getElementById('moodText').innerHTML = 'You\'re so boring !';
-  document.getElementById('score').innerHTML = 20;
+  document.getElementById('score').text = 20;
   cat.mood = 'mood';
   console.log(cat);
 }else if(parametreMood == 'excited'){
   document.getElementById('image1').src ='assets/img/image4.png';
   document.getElementById('moodText').innerHTML = 'Go ahead ! Continue !';
-  document.getElementById('score').innerHTML = 40;
+  document.getElementById('score').text = 40;
   cat.mood = 'excited';
   console.log(cat);
 }
 insertInGlobalScore();
+}
+// la partie du code permettant d'avoir la somme totale des points
+let sum = 0;
+let yourGlobalScore = [];
+function insertInGlobalScore(){
+  let score = parseInt(document.getElementById('score').text);
+  document.getElementById('score').innerHTML = score;
+  yourGlobalScore.push(score);
+  sum += score;
+  document.getElementById('yourSumScore').innerHTML = sum;
 }
 // new fonction to change weight of cat
 function changeCatWeight(weightParameter) {
@@ -79,14 +89,4 @@ function changeCatWeight(weightParameter) {
   }
   document.getElementById('moodText').innerHTML = reaction;
   document.getElementById('score').innerHTML = weightScore;
-}
-// la partie du code permettant d'avoir la somme totale des points
-let sum = 0;
-let yourGlobalScore = [];
-function insertInGlobalScore(){
-  let score = parseInt(document.getElementById('score').text);
-  document.getElementById('score').innerHTML = score;
-  yourGlobalScore.push(score);
-  sum += score;
-  document.getElementById('yourSumScore').innerHTML = sum;
 }
