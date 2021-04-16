@@ -12,10 +12,20 @@
 <body>
   <section class="container-fluid">
     <div class="row d-flex justify-content-between">
-      <div id="countDown" class="col-md-4">
+  <div class="container">
+  <div class="py-5">
+    <div class="row">
+      <div class="col-md-4">
+          <canvas id="canvas-number"></canvas>
+          <canvas id="canvas-dots"></canvas>
+      </div>
+  </div>
+</div>
+</div>
+      <!-- <div id="countDown" class="col-md-4">
         <h3>seconds left:<span id="time-left">90</span></h3>
         <button id="start-button" onclick="displayFoodAndActivity()">start</button>
-      </div>
+      </div> -->
       <div class="col-md-4">
         <div id="image">
           <h2 class="col-md-12">notre petit chaton</h2>
@@ -91,6 +101,7 @@
   <audio id="meow" src="assets/sounds/meow.wav"></audio>
   <audio id="purr" src="assets/sounds/purr.wav"></audio>
   <audio id="roar" src="assets/sounds/roar.wav"></audio>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.16.1/TweenMax.min.js" charset="utf-8"></script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>
