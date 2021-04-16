@@ -65,3 +65,18 @@ section{
   width: 0%;
   padding: 0;
 }
+/* nouvelle bar de progression test */
+#myProgress,
+#weightProgressBar,
+#statusProgressBar{
+  width: 100%;
+  background-color: #ddd;
+}
+
+#myBar,
+#weightBar,
+#statusBar{
+  width: 1%;
+  height: 30px;
+  background-color: #4CAF50;
+}
