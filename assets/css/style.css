@@ -29,42 +29,17 @@ section{
 }
 
 #yourSumScore{
-  width: 6vw;
-  height: 12vh;
-  border: 3px solid red;
+  margin: 0 auto;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
   text-align: center;
+  line-height: 2.5;
   font-size: 3rem;
   font-weight: bold;
+  color: #fff;
 }
-/* progress bar */
-#progress-bar-div{
-  width: 20vw;
-  float: right;
-  margin: 2rem;
-}
-#mood-bar{
-  height: 5vh;
-  width: 0%;
-  padding: 0;
-  background-color: blue;
-}
-.progress{
-  width: 25vw;
-  height: 5vh;
-  padding: 0;
-}
-#weight-bar{
-  background-color: green;
-  height: 5vh;
-  width: 0%;
-  padding: 0;
-}
-#status-bar{
-  background-color: yellow;
-  height: 5vh;
-  width: 0%;
-  padding: 0;
-  }
+
 /*FONTAWESOME*/
 .fa-ice-cream{
   color:deeppink;
@@ -95,14 +70,16 @@ section{
 #myProgress,
 #weightProgressBar,
 #statusProgressBar{
-  width: 100%;
+  width: 50%;
   background-color: #ddd;
+  height: 7vh;
+  border-radius: .4rem;
 }
-
 #myBar,
 #weightBar,
 #statusBar{
-  width: 1%;
-  height: 30px;
+  width: 3%;
+  height: 7vh;
   background-color: #4CAF50;
+  border-radius: .4rem;
 }
