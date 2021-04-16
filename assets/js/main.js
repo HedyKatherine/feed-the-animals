@@ -221,15 +221,6 @@ function moveStatusBar() {
     }
   }
 }
-// la partie du code permettant d'avoir la somme totale des points
-let sum = 0;
-let yourGlobalScore = [];
-function insertInGlobalScore(){
-  let sumOfTwoScores = progressionSum + progressionWeightSum + progressionStatusSum;
-  yourGlobalScore.push(sumOfTwoScores);
-  sum += sumOfTwoScores;
-  document.getElementById('yourSumScore').innerHTML = sum;
-}
 // COUNT DOUNT
 document.addEventListener('DOMContentLoaded', () =>{
   const timeLeftDisplay = document.querySelector('#time-left');
