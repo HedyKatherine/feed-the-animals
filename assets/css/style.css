@@ -106,3 +106,23 @@ section{
   height: 30px;
   background-color: #4CAF50;
 }
+
+@import url(https://fonts.googleapis.com/css?family=Lato:900);
+
+body {
+	background-color: #2f242e;
+	margin: 0;
+	padding: 0;
+}
+
+canvas {
+    position: absolute;
+    top: -222px;
+    /* left: 100px; */
+    left: -533px;
+}
+
+#canvas-number {
+	width: 480px;
+	height: 220px;
+}
