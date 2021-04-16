@@ -209,8 +209,7 @@ function moveWeightBar() {
       }
     }
   }
-}
-// la nouvelle bar de progression le Status
+}// la nouvelle bar de progression le Status
 var statusCount = 0;
 function moveStatusBar() {
   if (statusCount == 0) {
@@ -244,8 +243,7 @@ function moveStatusBar() {
 //     },1000);
 //   }
 //   startBtn.addEventListener('click', countDown );
-// });
-// la nouvelle bar de progression l'Humeur
+// });// la nouvelle bar de progression l'Humeur
 var i = 0;
 function moveMoodBar() {
   if (i == 0) {
