@@ -24,9 +24,9 @@ section{
   scale: 1.5;
 }
 /* cacher les icons des nurriture et activités */
-.some{
+/* .some{
   visibility: hidden;
-}
+} */
 
 #yourSumScore{
   margin: 0 auto;
@@ -82,24 +82,4 @@ section{
   height: 7vh;
   background-color: #4CAF50;
   border-radius: .4rem;
-}
-
-@import url(https://fonts.googleapis.com/css?family=Lato:900);
-
-body {
-	background-color: #2f242e;
-	margin: 0;
-	padding: 0;
-}
-
-canvas {
-    position: absolute;
-    top: -222px;
-    /* left: 100px; */
-    left: -533px;
-}
-
-#canvas-number {
-	width: 480px;
-	height: 220px;
 }

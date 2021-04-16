@@ -18,10 +18,10 @@ for (message of funnyMessages){
   console.log(message);
 }
 // afficher les icons de nurriture & activités
-function displayFoodAndActivity(){
-  document.getElementById('feedThem').style.visibility = 'visible';
-  document.getElementById('playWithThem').style.visibility = 'visible';
-}
+// function displayFoodAndActivity(){
+//   document.getElementById('feedThem').style.visibility = 'visible';
+//   document.getElementById('playWithThem').style.visibility = 'visible';
+// }
 function reactionMessages(source, message, moodBarScore, weightBarScore, statusBarScore, mood, weight, status){
   document.getElementById('image1').src = source;
   document.getElementById('moodText').innerHTML = message;
@@ -209,8 +209,7 @@ function moveWeightBar() {
       }
     }
   }
-}
-// la nouvelle bar de progression le Status
+}// la nouvelle bar de progression le Status
 var statusCount = 0;
 function moveStatusBar() {
   if (statusCount == 0) {
@@ -229,23 +228,22 @@ function moveStatusBar() {
     }
   }
 }
-// COUNTDOWN function
-document.addEventListener('DOMContentLoaded', () =>{
-  const timeLeftDisplay = document.querySelector('time-left');
-  const startBtn = document.querySelector('start-button');
-  let timeLeft = 90;
-  function countDown(){
-    setInterval(function(){
-      if (timeLeft <= 0) {
-        clearInterval(timeLeft = 0);
-      }
-      timeLeftDisplay.innerHTML = timeLeft;
-      timeLeft -=1;
-    },1000);
-  }
-  startBtn.addEventListener('click', countDown );
-});
-// la nouvelle bar de progression l'Humeur
+// // COUNTDOWN function
+// document.addEventListener('DOMContentLoaded', () =>{
+//   const timeLeftDisplay = document.querySelector('time-left');
+//   const startBtn = document.querySelector('start-button');
+//   let timeLeft = 90;
+//   function countDown(){
+//     setInterval(function(){
+//       if (timeLeft <= 0) {
+//         clearInterval(timeLeft = 0);
+//       }
+//       timeLeftDisplay.innerHTML = timeLeft;
+//       timeLeft -=1;
+//     },1000);
+//   }
+//   startBtn.addEventListener('click', countDown );
+// });// la nouvelle bar de progression l'Humeur
 var i = 0;
 function moveMoodBar() {
   if (i == 0) {
