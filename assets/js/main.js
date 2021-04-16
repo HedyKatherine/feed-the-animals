@@ -164,8 +164,6 @@ function changeCatWeight(weightParameter) {
   document.getElementById('moodText').innerHTML = reaction;
   document.getElementById('score').innerHTML = weightScore;
 }
-startBtn.addEventListener('click', countDown );
-});
 // la nouvelle bar de progression l'Humeur
 var i = 0;
 function moveMoodBar() {
