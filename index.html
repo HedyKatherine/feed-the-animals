@@ -77,14 +77,19 @@
   <section id="choose_activity" class="container-fluid">
     <div class="row d-flex justify-content-center">
       <div id="playWithThem" class="some play col-md-12 d-flex justify-content-between">
-        <i class="fas fa-5x fa-baseball-ball"></i>
-        <i class="fas fa-5x fa-bed"></i>
-        <i class="fas fa-5x fa-music"></i>
-        <i class="fas fa-5x fa-bath"></i>
-        <i class="fas fa-5x fa-tv"></i>
+        <i class="fas fa-5x fa-baseball-ball" onclick="changeCatWeight('light')"></i>
+        <i class="fas fa-5x fa-bed" onclick="changeCatWeight('heavy')"></i>
+        <i class="fas fa-5x fa-music" onclick="changeCatWeight('medium')"></i>
+        <i class="fas fa-5x fa-bath" onclick="changeCatWeight('neutral')"></i>
+        <i class="fas fa-5x fa-tv" onclick="changeCatWeight('chonk')"></i>
       </div>
     </div>
   </section>
+  <audio id="brokenPlate" src="assets/sounds/broken-plate.wav"></audio>
+  <audio id="growl" src="assets/sounds/growl.wav"></audio>
+  <audio id="meow" src="assets/sounds/meow.wav"></audio>
+  <audio id="purr" src="assets/sounds/purr.wav"></audio>
+  <audio id="roar" src="assets/sounds/roar.wav"></audio>
   <script src="assets/js/main.js"></script>
 </body>
 </html>

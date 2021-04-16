@@ -65,15 +65,14 @@ function moodReaction(parametreMood){
     cat.status = 'stuffed';
     console.log(cat);
   }
-insertInGlobalScore();
-insertInProgressionBar();
-insertInWeightBar();
-insertInStatusBar();
-moveMoodBar();
-moveWeightBar();
-moveStatusBar();
+  insertInGlobalScore();
+  insertInProgressionBar();
+  insertInWeightBar();
+  insertInStatusBar();
+  moveMoodBar();
+  moveWeightBar();
+  moveStatusBar();
 }
-
 // la fonction permettant de faire la bare de progression dynamique Humeur
 let progressionSum = 0;
 let progressionBarArray = [];
@@ -104,47 +103,68 @@ function insertInStatusBar(){
   progressionStatusSum += statusbarScore;
   document.getElementById('statusSumScore').innerHTML = progressionStatusSum;
 }
-
-
-
-
-
-
 // new fonction to change weight of cat
-// function changeCatWeight(weightParameter) {
-//   let reaction;
-//   let weightScore;
-//   let image = document.getElementById('image1');
-//   switch (weightParameter) {
-//     case 'light'  :
-//       reaction = 'Yes ! I love to play !';
-//       weightScore = 50;
-//       cat.weight = 'light';
-//       console.log(cat);
-//       break;
-//     case 'medium' :
-//     reaction = 'I\'m so sleepy... zzz...';
-//     weightScore = 70;
-//     image.src = 'assets/img/image8.png';
-//     cat.weight = 'medium';
-//   }
-// COUNT DOUNT
-
-document.addEventListener('DOMContentLoaded', () =>{
-const timeLeftDisplay = document.querySelector('#time-left');
-const startBtn = document.querySelector('#start-button');
- let timeLeft = 90;
-
-function countDown(){
-  setInterval(function(){
-  if (timeLeft <= 0) {
-    clearInterval(timeLeft = 0);
+function changeCatWeight(weightParameter) {
+  let reaction;
+  let weightScore;
+  let image = document.getElementById('image1');
+  // switch (expression)
+  switch (weightParameter) {
+    // first case value
+    case 'light'  :
+    // first statement
+    reaction = 'Yes ! I love to play !';
+    weightScore = 50;
+    cat.weight = 'light';
+    var sound = document.getElementById('purr');
+    sound.play();
+    console.log(cat);
+    // first break statement to halt first switch case
+    break;
+    case 'heavy' :
+    reaction = 'I\'m so sleepy...\nzzz...';
+    weightScore = 70;
+    image.src = 'assets/img/image8.png';
+    cat.weight = 'heavy';
+    var sound = document.getElementById('purr');
+    sound.play();
+    console.log(cat);
+    break;
+    case 'medium' :
+    reaction = 'Do you want to dance\n?';
+    weightScore = 65;
+    image.src = 'assets/img/image10.png';
+    cat.weight = 'medium';
+    var sound = document.getElementById('purr');
+    sound.play();
+    console.log(cat);
+    break;
+    case 'neutral' :
+    reaction = 'Not the bath\n!\nI can wash myself\n!';
+    weightScore = 60;
+    image.src = 'assets/img/image9.png';
+    cat.weight = 'neutral';
+    var sound = document.getElementById('roar');
+    sound.play();
+    console.log(cat);
+    break;
+    case 'chonk' :
+    reaction = 'Let\'s watch some T.V.,\njust you & me\n!';
+    weightScore = 80;
+    image.src = 'assets/img/image6.png';
+    cat.weight = 'chonk';
+    var sound = document.getElementById('purr');
+    sound.play();
+    console.log(cat);
+    break;
+    default:
+    reaction = 'test';
+    weightScore = 0;
   }
-    timeLeftDisplay.innerHTML = timeLeft;
-    timeLeft -=1;
-  },1000);
+  document.getElementById('moodText').innerHTML = reaction;
+  document.getElementById('score').innerHTML = weightScore;
 }
-  startBtn.addEventListener('click', countDown );
+startBtn.addEventListener('click', countDown );
 });
 // la nouvelle bar de progression l'Humeur
 var i = 0;
@@ -164,7 +184,6 @@ function moveMoodBar() {
       }
     }
   }
-
 }
 // la nouvelle bar de progression le Poids
 var weightCount = 0;
@@ -184,7 +203,6 @@ function moveWeightBar() {
       }
     }
   }
-
 }
 // la nouvelle bar de progression le Status
 var statusCount = 0;
@@ -204,7 +222,6 @@ function moveStatusBar() {
       }
     }
   }
-
 }
 // la partie du code permettant d'avoir la somme totale des points
 let sum = 0;
@@ -214,5 +231,4 @@ function insertInGlobalScore(){
   yourGlobalScore.push(sumOfTwoScores);
   sum += sumOfTwoScores;
   document.getElementById('yourSumScore').innerHTML = sum;
-
 }
