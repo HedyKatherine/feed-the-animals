@@ -12,16 +12,8 @@
 <body>
   <section class="container-fluid">
     <div class="row d-flex justify-content-between">
-  <div class="container">
-  <div class="py-5">
-    <div class="row">
-      <div class="col-md-4">
-          <canvas id="canvas-number"></canvas>
-          <canvas id="canvas-dots"></canvas>
+      <div class="col-md-1">
       </div>
-  </div>
-</div>
-</div>
       <!-- <div id="countDown" class="col-md-4">
         <h3>seconds left:<span id="time-left">90</span></h3>
         <button id="start-button" onclick="displayFoodAndActivity()">start</button>
@@ -46,16 +38,17 @@
       <div class="col-md-4">
         <!-- ici il y a notre bar de progression -->
         <!-- la bar qui montre l'humeur -->
-        <div id="myProgress">
-          <div id="myBar"></div>
-        </div>
-            <p></p>
+          <p class="mt-1">Humeur: </p>
+          <div id="myProgress">
+            <div id="myBar"></div>
+          </div>
         <!-- la bar qui montre le poids -->
+        <p  class="mt-4">Poids: </p>
         <div id="weightProgressBar">
           <div id="weightBar"></div>
         </div>
-            <p></p>
         <!-- la bar qui montre le status -->
+        <p  class="mt-4">Status: </p>
         <div id="statusProgressBar">
           <div id="statusBar"></div>
         </div>
@@ -63,9 +56,9 @@
           <div id="star_score" class="col-md-12">
             <p id="yourGlobalScore"></p>
             <p id="yourScore" class="mx-auto text-center">Your Global Score</p>
-            <p id="yourSumScore" class="rounded-circle mx-auto"></p>
-            <p id="progressSumScore">MOOOD</p>
-            <p id="weightSumScore">SUUUM</p>
+            <div id="yourSumScore"></div>
+            <p id="progressSumScore"></p>
+            <p id="weightSumScore"></p>
             <p id="statusSumScore"></p>
           </div>
         </div>
@@ -87,14 +80,19 @@
   <section id="choose_activity" class="container-fluid">
     <div class="row d-flex justify-content-center">
       <div id="playWithThem" class="some play col-md-12 d-flex justify-content-between">
-        <i class="fas fa-5x fa-baseball-ball"></i>
-        <i class="fas fa-5x fa-bed"></i>
-        <i class="fas fa-5x fa-music"></i>
-        <i class="fas fa-5x fa-bath"></i>
-        <i class="fas fa-5x fa-tv"></i>
+        <i class="fas fa-5x fa-baseball-ball" onclick="changeCatWeight('light')"></i>
+        <i class="fas fa-5x fa-bed" onclick="changeCatWeight('heavy')"></i>
+        <i class="fas fa-5x fa-music" onclick="changeCatWeight('medium')"></i>
+        <i class="fas fa-5x fa-bath" onclick="changeCatWeight('neutral')"></i>
+        <i class="fas fa-5x fa-tv" onclick="changeCatWeight('chonk')"></i>
       </div>
     </div>
   </section>
+  <audio id="brokenPlate" src="assets/sounds/broken-plate.wav"></audio>
+  <audio id="growl" src="assets/sounds/growl.wav"></audio>
+  <audio id="meow" src="assets/sounds/meow.wav"></audio>
+  <audio id="purr" src="assets/sounds/purr.wav"></audio>
+  <audio id="roar" src="assets/sounds/roar.wav"></audio>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.16.1/TweenMax.min.js" charset="utf-8"></script>
   <script src="assets/js/main.js"></script>
 </body>
