@@ -65,3 +65,30 @@ section{
   width: 0%;
   padding: 0;
 }
+
+/*FONTAWESOME*/
+.fa-ice-cream{
+  color:deeppink;
+}
+
+.fa-pepper-hot{
+  color:red;
+}
+.fa-fish{
+  color:blue;
+}
+.fa-carrot{
+  color:orange;
+}
+.fa-pizza-slice{
+  color:salmon;
+}
+.fa-baseball-ball{
+  color:purple;
+}
+.fa-bed{
+  color: green;
+}
+.fa-music{
+  color:goldenrod;
+}
