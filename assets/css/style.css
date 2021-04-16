@@ -64,8 +64,7 @@ section{
   height: 5vh;
   width: 0%;
   padding: 0;
-}
-
+  }
 /*FONTAWESOME*/
 .fa-ice-cream{
   color:deeppink;
@@ -91,4 +90,19 @@ section{
 }
 .fa-music{
   color:goldenrod;
+}
+/* nouvelle bar de progression test */
+#myProgress,
+#weightProgressBar,
+#statusProgressBar{
+  width: 100%;
+  background-color: #ddd;
+}
+
+#myBar,
+#weightBar,
+#statusBar{
+  width: 1%;
+  height: 30px;
+  background-color: #4CAF50;
 }

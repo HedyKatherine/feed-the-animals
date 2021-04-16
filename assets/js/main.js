@@ -12,100 +12,104 @@ let dog = {
   weight : 'neutral',
   status : 'neutral',
 };
-function setNewImage() {
-  document.getElementById('image1').src ='assets/img/image3.png';
-}
-function setOldImage() {
-  document.getElementById('image1').src ='assets/img/image1.png';
+// boucle pour afficher les messages
+const funnyMessages = ['Yummy ! One more please!', 'Disgusting ! Eat it by yourself !', 'You\'re so boring !', 'Go ahead ! Continue !', 'Wow I can\'t stop!'];
+for (message of funnyMessages){
+  console.log(message);
 }
 // afficher les icons de nurriture & activités
-function displayFood(){
+function displayFoodAndActivity(){
   document.getElementById('feedThem').style.visibility = 'visible';
-}
-function displayActivities(){
   document.getElementById('playWithThem').style.visibility = 'visible';
+}
+function reactionMessages(source, message, moodBarScore, weightBarScore, statusBarScore, mood, weight, status){
+  document.getElementById('image1').src = source;
+  document.getElementById('moodText').innerHTML = message;
+  document.getElementById('progressbar-score').text = moodBarScore;
+  document.getElementById('weightbar-score').text = weightBarScore;
+  document.getElementById('statusbar-score').text = statusBarScore;
+  cat.mood = mood;
+  cat.weight = weight;
+  cat.status = status;
 }
 // changer l'humeur du chaton
 function moodReaction(parametreMood){
-  // sumOfScores();
   if (parametreMood == 'happy'){
-    document.getElementById('image1').src ='assets/img/image1.png';
-    document.getElementById('moodText').innerHTML = 'Yummy ! One more please!';
-    document.getElementById('score').text = 70;
-    document.getElementById('mood-bar').style.width = '70%';
-    document.getElementById('mood-bar').innerHTML = '70%';
-    document.getElementById('weight-bar').style.width = '80%';
-    document.getElementById('weight-bar').style.background = 'red';
-    document.getElementById('weight-bar').innerHTML = '80%';
+    reactionMessages('assets/img/image1.png', funnyMessages[0], 3, 6, 10, 'happy', 'heavy', 'full');
     cat.mood = 'happy';
-    cat.weight = 'extra';
-    cat.status = '';
+    cat.weight = 'heavy';
+    cat.status = 'full';
     console.log(cat);
   }else if(parametreMood == 'furious'){
-    document.getElementById('image1').src ='assets/img/image2.png';
-    document.getElementById('moodText').innerHTML = 'Disgusting ! Eat it by yourself !';
-    document.getElementById('score').text = 10;
-    document.getElementById('mood-bar').style.width = '10%';
-    document.getElementById('mood-bar').innerHTML = '10%';
-    document.getElementById('weight-bar').style.width = '10%';
-    document.getElementById('weight-bar').innerHTML = '10%';
-    document.getElementById('weight-bar').style.background = 'red';
+    reactionMessages('assets/img/image2.png', funnyMessages[1], -3, -2, -9, 'furious', 'light', 'starving');
     cat.mood = 'furious';
     cat.weight = 'light';
-    cat.status = '';
+    cat.status = 'starving';
     console.log(cat);
   }else if(parametreMood == 'moody'){
-    document.getElementById('image1').src ='assets/img/image5.png';
-    document.getElementById('moodText').innerHTML = 'You\'re so boring !';
-    document.getElementById('score').text = 20;
-    document.getElementById('mood-bar').style.width = '20%';
-    document.getElementById('mood-bar').innerHTML = '20%';
-    document.getElementById('weight-bar').style.width = '20%';
-    document.getElementById('weight-bar').innerHTML = '20%';
-    document.getElementById('weight-bar').style.background = 'green';
+    reactionMessages('assets/img/image5.png', funnyMessages[2], -2, 1, 0, 'moody', 'neutral', 'hungry');
     cat.mood = 'moody';
-    cat.weight = "normal";
-    cat.status = '';
+    cat.weight = "neutral";
+    cat.status = 'hungry';
     console.log(cat);
   }else if(parametreMood == 'excited'){
-    document.getElementById('image1').src ='assets/img/image4.png';
-    document.getElementById('moodText').innerHTML = 'Go ahead ! Continue !';
-    document.getElementById('score').text = 40;
-    document.getElementById('mood-bar').style.width = '90%';
-    document.getElementById('mood-bar').innerHTML = '90%';
-    document.getElementById('weight-bar').style.width = '50%';
-    document.getElementById('weight-bar').innerHTML = '50%';
-    document.getElementById('weight-bar').style.background = 'green';
+    reactionMessages('assets/img/image4.png', funnyMessages[3], 4, 3.5, 12, 'excited', 'medium', 'full');
     cat.mood = 'excited';
-    cat.weight = 'normal';
-    cat.status = '';
+    cat.weight = 'medium';
+    cat.status = 'full';
     console.log(cat);
   }else if(parametreMood == 'excited-too-much'){
-    document.getElementById('image1').src ='assets/img/image14.png';
-    document.getElementById('moodText').innerHTML = 'Wow I can\'t stop!';
-    document.getElementById('score').text = 40;
-    document.getElementById('mood-bar').style.width = '90%';
-    document.getElementById('mood-bar').innerHTML = '90%';
-    document.getElementById('weight-bar').style.width = '80%';
-    document.getElementById('weight-bar').innerHTML = '80%';
-    document.getElementById('weight-bar').style.background = 'red';
+    reactionMessages('assets/img/image14.png', funnyMessages[4], 5, 5.5, 15, 'excited-too-much', 'chonk', 'stuffed');
     cat.mood = 'excited-too-much';
-    cat.weight = 'normal';
-    cat.status = '';
+    cat.weight = 'chonk';
+    cat.status = 'stuffed';
     console.log(cat);
   }
 insertInGlobalScore();
+insertInProgressionBar();
+insertInWeightBar();
+insertInStatusBar();
+moveMoodBar();
+moveWeightBar();
+moveStatusBar();
 }
-// la partie du code permettant d'avoir la somme totale des points
-let sum = 0;
-let yourGlobalScore = [];
-function insertInGlobalScore(){
-  let score = parseInt(document.getElementById('score').text);
-  document.getElementById('score').innerHTML = score;
-  yourGlobalScore.push(score);
-  sum += score;
-  document.getElementById('yourSumScore').innerHTML = sum;
+
+// la fonction permettant de faire la bare de progression dynamique Humeur
+let progressionSum = 0;
+let progressionBarArray = [];
+function insertInProgressionBar(){
+  let progressbarScore = parseInt(document.getElementById('progressbar-score').text);
+  document.getElementById('progressbar-score').innerHTML = progressbarScore;
+  progressionBarArray.push(progressbarScore);
+  progressionSum += progressbarScore;
+  document.getElementById('progressSumScore').innerHTML = progressionSum;
 }
+// barre de progression weight
+let progressionWeightSum = 0;
+let progressionWeightArray = [];
+function insertInWeightBar(){
+  weightbarScore = parseInt(document.getElementById('weightbar-score').text);
+  document.getElementById('weightbar-score').innerHTML = weightbarScore;
+  progressionWeightArray.push(weightbarScore);
+  progressionWeightSum += weightbarScore;
+  document.getElementById('weightSumScore').innerHTML = progressionWeightSum;
+}
+// barre de progression status
+let progressionStatusSum = 0;
+let progressionStatusArray = [];
+function insertInStatusBar(){
+  statusbarScore = parseInt(document.getElementById('statusbar-score').text);
+  document.getElementById('statusbar-score').innerHTML = statusbarScore;
+  progressionStatusArray.push(statusbarScore);
+  progressionStatusSum += statusbarScore;
+  document.getElementById('statusSumScore').innerHTML = progressionStatusSum;
+}
+
+
+
+
+
+
 // new fonction to change weight of cat
 // function changeCatWeight(weightParameter) {
 //   let reaction;
@@ -142,3 +146,73 @@ function countDown(){
 }
   startBtn.addEventListener('click', countDown );
 });
+// la nouvelle bar de progression l'Humeur
+var i = 0;
+function moveMoodBar() {
+  if (i == 0) {
+    i = 1;
+    var elem = document.getElementById("myBar");
+    var width = 1;
+    var id = setInterval(frame, 10);
+    function frame() {
+      if (width >= progressionSum) {
+        clearInterval(id);
+        i = 0;
+      } else {
+        width++;
+        elem.style.width = width + "%";
+      }
+    }
+  }
+
+}
+// la nouvelle bar de progression le Poids
+var weightCount = 0;
+function moveWeightBar() {
+  if (weightCount == 0) {
+    weightCount = 1;
+    var weightElem = document.getElementById("weightBar");
+    var weightWidth = 1;
+    var idWeight = setInterval(weightframe, 10);
+    function weightframe() {
+      if (weightWidth >= progressionWeightSum) {
+        clearInterval(idWeight);
+        weightCount = 0;
+      } else {
+        weightWidth++;
+        weightElem.style.width = weightWidth + "%";
+      }
+    }
+  }
+
+}
+// la nouvelle bar de progression le Status
+var statusCount = 0;
+function moveStatusBar() {
+  if (statusCount == 0) {
+    statusCount = 1;
+    var statusElem = document.getElementById("statusBar");
+    var statusWidth = 1;
+    var idStatus = setInterval(statusframe, 10);
+    function statusframe() {
+      if (statusWidth >= progressionStatusSum) {
+        clearInterval(idStatus);
+        statusCount = 0;
+      } else {
+        statusWidth++;
+        statusElem.style.width = statusWidth + "%";
+      }
+    }
+  }
+
+}
+// la partie du code permettant d'avoir la somme totale des points
+let sum = 0;
+let yourGlobalScore = [];
+function insertInGlobalScore(){
+  let sumOfTwoScores = progressionSum + progressionWeightSum + progressionStatusSum;
+  yourGlobalScore.push(sumOfTwoScores);
+  sum += sumOfTwoScores;
+  document.getElementById('yourSumScore').innerHTML = sum;
+
+}

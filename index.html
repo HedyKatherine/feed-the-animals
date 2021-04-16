@@ -14,14 +14,13 @@
     <div class="row d-flex justify-content-between">
       <div id="countDown" class="col-md-4">
         <h3>seconds left:<span id="time-left">90</span></h3>
-        <button id="start-button">start</button>
-        <p class="small-text"></p>
+        <button id="start-button" onclick="displayFoodAndActivity()">start</button>
       </div>
       <div class="col-md-4">
         <div id="image">
           <h2 class="col-md-12">notre petit chaton</h2>
           <div class="col-md-12 col-lg-6 col-xl-4">
-            <img id="image1" onmouseover="setNewImage()" onmouseout="setOldImage()" src="assets/img/image1.png" alt="un chaton" width="300">
+            <img id="image1" src="assets/img/image1.png" alt="un chaton" width="300">
             <p>Votre score: </p>
             <p id="score">0</p>
           </div>
@@ -29,26 +28,35 @@
         <!-- ici on peux garder de l'espace pour afficher nos petits messages rigolos et le score -->
         <div id="place_for_messages">
           <p id="moodText"></p>
-          <p id="whichMood"></p>
+          <p id="progressbar-score"></p>
+          <p id="weightbar-score">WEIGHT bar</p>
+          <p id="statusbar-score"></p>
         </div>
       </div>
       <div class="col-md-4">
         <!-- ici il y a notre bar de progression -->
-        <div id="progress-bar-div">
-          <div class="progress w-25 col-md-12 m-1">
-            <div id="mood-bar" class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-          </div>
-          <div class="progress w-25 col-md-12 m-1">
-            <div id="weight-bar" class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-          </div>
-          <div class="progress w-25 col-md-12 m-1">
-            <div id="status-bar" class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-          </div>
+        <!-- la bar qui montre l'humeur -->
+        <div id="myProgress">
+          <div id="myBar"></div>
+        </div>
+            <p></p>
+        <!-- la bar qui montre le poids -->
+        <div id="weightProgressBar">
+          <div id="weightBar"></div>
+        </div>
+            <p></p>
+        <!-- la bar qui montre le status -->
+        <div id="statusProgressBar">
+          <div id="statusBar"></div>
+        </div>
           <!-- ici on met la score global intéractive -->
           <div id="star_score" class="col-md-12">
             <p id="yourGlobalScore"></p>
             <p id="yourScore" class="mx-auto text-center">Your Global Score</p>
             <p id="yourSumScore" class="rounded-circle mx-auto"></p>
+            <p id="progressSumScore">MOOOD</p>
+            <p id="weightSumScore">SUUUM</p>
+            <p id="statusSumScore"></p>
           </div>
         </div>
       </div>
@@ -57,7 +65,6 @@
   <!-- ici on affiche les icons permettant de jouer et gagner les points: les deux sections: Nourriture et Activités -->
   <section id="choose_food" class="container-fluid">
     <div class="row d-flex justify-content-center">
-      <button class="col-md-2 btn-lg btn-secondary" type="button" name="button" onclick="displayFood()">Nourriture</button>
       <div id="feedThem" class="some food col-md-12 d-flex justify-content-between">
         <i class="fas fa-5x fa-ice-cream" onclick="moodReaction('happy')"></i>
         <i class="fas fa-5x fa-pepper-hot" onclick="moodReaction('furious')"></i>
@@ -69,7 +76,6 @@
   </section>
   <section id="choose_activity" class="container-fluid">
     <div class="row d-flex justify-content-center">
-      <button class="col-md-2 btn-lg btn-secondary" type="button" name="button" onclick="displayActivities()">Activités</button>
       <div id="playWithThem" class="some play col-md-12 d-flex justify-content-between">
         <i class="fas fa-5x fa-baseball-ball"></i>
         <i class="fas fa-5x fa-bed"></i>
