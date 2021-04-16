@@ -232,3 +232,85 @@ function insertInGlobalScore(){
   sum += sumOfTwoScores;
   document.getElementById('yourSumScore').innerHTML = sum;
 }
+// COUNT DOUNT
+document.addEventListener('DOMContentLoaded', () =>{
+  const timeLeftDisplay = document.querySelector('#time-left');
+  const startBtn = document.querySelector('#start-button');
+  let timeLeft = 90;
+  function countDown(){
+    setInterval(function(){
+      if (timeLeft <= 0) {
+        clearInterval(timeLeft = 0);
+      }
+      timeLeftDisplay.innerHTML = timeLeft;
+      timeLeft -=1;
+    },1000);
+  }
+  startBtn.addEventListener('click', countDown );
+});
+// la nouvelle bar de progression l'Humeur
+var i = 0;
+function moveMoodBar() {
+  if (i == 0) {
+    i = 1;
+    var elem = document.getElementById("myBar");
+    var width = 1;
+    var id = setInterval(frame, 10);
+    function frame() {
+      if (width >= progressionSum) {
+        clearInterval(id);
+        i = 0;
+      } else {
+        width++;
+        elem.style.width = width + "%";
+      }
+    }
+  }
+}
+// la nouvelle bar de progression le Poids
+var weightCount = 0;
+function moveWeightBar() {
+  if (weightCount == 0) {
+    weightCount = 1;
+    var weightElem = document.getElementById("weightBar");
+    var weightWidth = 1;
+    var idWeight = setInterval(weightframe, 10);
+    function weightframe() {
+      if (weightWidth >= progressionWeightSum) {
+        clearInterval(idWeight);
+        weightCount = 0;
+      } else {
+        weightWidth++;
+        weightElem.style.width = weightWidth + "%";
+      }
+    }
+  }
+}
+// la nouvelle bar de progression le Status
+var statusCount = 0;
+function moveStatusBar() {
+  if (statusCount == 0) {
+    statusCount = 1;
+    var statusElem = document.getElementById("statusBar");
+    var statusWidth = 1;
+    var idStatus = setInterval(statusframe, 10);
+    function statusframe() {
+      if (statusWidth >= progressionStatusSum) {
+        clearInterval(idStatus);
+        statusCount = 0;
+      } else {
+        statusWidth++;
+        statusElem.style.width = statusWidth + "%";
+      }
+    }
+  }
+}
+// la partie du code permettant d'avoir la somme totale des points
+let sum = 0;
+let yourGlobalScore = [];
+function insertInGlobalScore(){
+  let sumOfTwoScores = progressionSum + progressionWeightSum + progressionStatusSum;
+  yourGlobalScore.push(sumOfTwoScores);
+  sum += sumOfTwoScores;
+  document.getElementById('yourSumScore').innerHTML = sum;
+}
