@@ -49,7 +49,7 @@ function moodReaction(parametreMood){
   }else if(parametreMood == 'moody'){
     reactionMessages('assets/img/image5.png', funnyMessages[2], -2, 1, 0, 'moody', 'neutral', 'hungry');
     cat.mood = 'moody';
-    cat.weight = "neutral";
+    cat.weight = 'neutral';
     cat.status = 'hungry';
     console.log(cat);
   }else if(parametreMood == 'excited'){
@@ -116,7 +116,7 @@ function changeCatWeight(weightParameter) {
     reaction = 'Yes ! I love to play !';
     weightScore = 50;
     cat.weight = 'light';
-    var sound = document.getElementById('purr');
+    var sound = document.getElementById('meow');
     sound.play();
     console.log(cat);
     // first break statement to halt first switch case
@@ -126,7 +126,7 @@ function changeCatWeight(weightParameter) {
     weightScore = 70;
     image.src = 'assets/img/image8.png';
     cat.weight = 'heavy';
-    var sound = document.getElementById('purr');
+    var sound = document.getElementById('meow');
     sound.play();
     console.log(cat);
     break;
@@ -135,7 +135,7 @@ function changeCatWeight(weightParameter) {
     weightScore = 65;
     image.src = 'assets/img/image10.png';
     cat.weight = 'medium';
-    var sound = document.getElementById('purr');
+    var sound = document.getElementById('meow');
     sound.play();
     console.log(cat);
     break;
@@ -153,7 +153,7 @@ function changeCatWeight(weightParameter) {
     weightScore = 80;
     image.src = 'assets/img/image6.png';
     cat.weight = 'chonk';
-    var sound = document.getElementById('purr');
+    var sound = document.getElementById('meow');
     sound.play();
     console.log(cat);
     break;
@@ -169,7 +169,7 @@ var i = 0;
 function moveMoodBar() {
   if (i == 0) {
     i = 1;
-    var elem = document.getElementById("myBar");
+    var elem = document.getElementById('myBar');
     var width = 1;
     var id = setInterval(frame, 10);
     function frame() {
@@ -188,7 +188,7 @@ var weightCount = 0;
 function moveWeightBar() {
   if (weightCount == 0) {
     weightCount = 1;
-    var weightElem = document.getElementById("weightBar");
+    var weightElem = document.getElementById('weightBar');
     var weightWidth = 1;
     var idWeight = setInterval(weightframe, 10);
     function weightframe() {
@@ -207,7 +207,7 @@ var statusCount = 0;
 function moveStatusBar() {
   if (statusCount == 0) {
     statusCount = 1;
-    var statusElem = document.getElementById("statusBar");
+    var statusElem = document.getElementById('statusBar');
     var statusWidth = 1;
     var idStatus = setInterval(statusframe, 10);
     function statusframe() {
@@ -221,10 +221,10 @@ function moveStatusBar() {
     }
   }
 }
-// COUNT DOUNT
+// COUNTDOWN function
 document.addEventListener('DOMContentLoaded', () =>{
-  const timeLeftDisplay = document.querySelector('#time-left');
-  const startBtn = document.querySelector('#start-button');
+  const timeLeftDisplay = document.querySelector('time-left');
+  const startBtn = document.querySelector('start-button');
   let timeLeft = 90;
   function countDown(){
     setInterval(function(){
@@ -242,7 +242,7 @@ var i = 0;
 function moveMoodBar() {
   if (i == 0) {
     i = 1;
-    var elem = document.getElementById("myBar");
+    var elem = document.getElementById('myBar');
     var width = 1;
     var id = setInterval(frame, 10);
     function frame() {
@@ -261,7 +261,7 @@ var weightCount = 0;
 function moveWeightBar() {
   if (weightCount == 0) {
     weightCount = 1;
-    var weightElem = document.getElementById("weightBar");
+    var weightElem = document.getElementById('weightBar');
     var weightWidth = 1;
     var idWeight = setInterval(weightframe, 10);
     function weightframe() {
@@ -280,7 +280,7 @@ var statusCount = 0;
 function moveStatusBar() {
   if (statusCount == 0) {
     statusCount = 1;
-    var statusElem = document.getElementById("statusBar");
+    var statusElem = document.getElementById('statusBar');
     var statusWidth = 1;
     var idStatus = setInterval(statusframe, 10);
     function statusframe() {
