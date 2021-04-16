@@ -78,30 +78,30 @@ let progressionSum = 0;
 let progressionBarArray = [];
 function insertInProgressionBar(){
   let progressbarScore = parseInt(document.getElementById('progressbar-score').text);
-  document.getElementById('progressbar-score').innerHTML = progressbarScore;
+  // document.getElementById('progressbar-score').innerHTML = progressbarScore;
   progressionBarArray.push(progressbarScore);
   progressionSum += progressbarScore;
-  document.getElementById('progressSumScore').innerHTML = progressionSum;
+  // document.getElementById('progressSumScore').innerHTML = progressionSum;
 }
 // barre de progression weight
 let progressionWeightSum = 0;
 let progressionWeightArray = [];
 function insertInWeightBar(){
   weightbarScore = parseInt(document.getElementById('weightbar-score').text);
-  document.getElementById('weightbar-score').innerHTML = weightbarScore;
+  // document.getElementById('weightbar-score').innerHTML = weightbarScore;
   progressionWeightArray.push(weightbarScore);
   progressionWeightSum += weightbarScore;
-  document.getElementById('weightSumScore').innerHTML = progressionWeightSum;
+  // document.getElementById('weightSumScore').innerHTML = progressionWeightSum;
 }
 // barre de progression status
 let progressionStatusSum = 0;
 let progressionStatusArray = [];
 function insertInStatusBar(){
   statusbarScore = parseInt(document.getElementById('statusbar-score').text);
-  document.getElementById('statusbar-score').innerHTML = statusbarScore;
+  // document.getElementById('statusbar-score').innerHTML = statusbarScore;
   progressionStatusArray.push(statusbarScore);
   progressionStatusSum += statusbarScore;
-  document.getElementById('statusSumScore').innerHTML = progressionStatusSum;
+  // document.getElementById('statusSumScore').innerHTML = progressionStatusSum;
 }
 // new fonction to change weight of cat
 function changeCatWeight(weightParameter) {
@@ -115,7 +115,9 @@ function changeCatWeight(weightParameter) {
     // first statement
     reaction = 'Yes ! I love to play !';
     weightScore = 50;
+    cat.mood = '';
     cat.weight = 'light';
+    cat.status = '';
     var sound = document.getElementById('meow');
     sound.play();
     console.log(cat);
@@ -125,7 +127,9 @@ function changeCatWeight(weightParameter) {
     reaction = 'I\'m so sleepy...\nzzz...';
     weightScore = 70;
     image.src = 'assets/img/image8.png';
+    cat.mood = '';
     cat.weight = 'heavy';
+    cat.status = '';
     var sound = document.getElementById('meow');
     sound.play();
     console.log(cat);
@@ -134,7 +138,9 @@ function changeCatWeight(weightParameter) {
     reaction = 'Do you want to dance\n?';
     weightScore = 65;
     image.src = 'assets/img/image10.png';
+    cat.mood = '';
     cat.weight = 'medium';
+    cat.status = '';
     var sound = document.getElementById('meow');
     sound.play();
     console.log(cat);
@@ -152,7 +158,9 @@ function changeCatWeight(weightParameter) {
     reaction = 'Let\'s watch some T.V.,\njust you & me\n!';
     weightScore = 80;
     image.src = 'assets/img/image6.png';
+    cat.mood = '';
     cat.weight = 'chonk';
+    cat.status = '';
     var sound = document.getElementById('meow');
     sound.play();
     console.log(cat);
@@ -298,8 +306,18 @@ function moveStatusBar() {
 let sum = 0;
 let yourGlobalScore = [];
 function insertInGlobalScore(){
-  let sumOfTwoScores = progressionSum + progressionWeightSum + progressionStatusSum;
-  yourGlobalScore.push(sumOfTwoScores);
-  sum += sumOfTwoScores;
+  let weight = parseInt(document.getElementById('weightbar-score').text);
+  document.getElementById('weightbar-score').innerHTML = weight;
+  yourGlobalScore.push(weight);
+  let status = parseInt(document.getElementById('statusbar-score').text);
+  document.getElementById('statusbar-score').innerHTML = status;
+  yourGlobalScore.push(status);
+  let mood = parseInt(document.getElementById('progressbar-score').text);
+  document.getElementById('progressbar-score').innerHTML = mood;
+  progressionBarArray.push(mood);
+  let sumOfScores = status + weight + mood;
+  yourGlobalScore.push(sumOfScores);
+  sum += sumOfScores;
   document.getElementById('yourSumScore').innerHTML = sum;
+  document.getElementById('yourSumScore').style.backgroundImage = "url('assets/img/red-background.png')";
 }
