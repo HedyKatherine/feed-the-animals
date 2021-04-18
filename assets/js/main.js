@@ -5,13 +5,6 @@ let cat = {
   weight : 'neutral',
   status : 'neutral',
 };
-// our second object
-let dog = {
-  name : 'Doggy',
-  mood : 'neutral',
-  weight : 'neutral',
-  status : 'neutral',
-};
 // boucle pour afficher les messages
 const funnyMessages = ['Yummy! One more please!', 'Disgusting! Eat it by yourself!', 'You\'re so boring!', 'Go ahead! Continue!', 'Wow I can\'t stop!'];
 for (message of funnyMessages){
@@ -33,9 +26,13 @@ function moodReaction(parametreMood){
     console.log(cat);
   }else if(parametreMood == 'furious'){
     reactionMessages('assets/img/image7.png', funnyMessages[1], 'Creepster', -8, -2, -9);
+    let angryCatSound = document.getElementById('growl');
+    angryCatSound.play();
     console.log(cat);
   }else if(parametreMood == 'moody'){
     reactionMessages('assets/img/image5.png', funnyMessages[2], 'Fontdiner Swanky', -7, 1, 0);
+    let upsetCatSound = document.getElementById('brokenPlate');
+    upsetCatSound.play();
     console.log(cat);
   }else if(parametreMood == 'excited'){
     reactionMessages('assets/img/image4.png', funnyMessages[3], 'Luckiest Guy', 4, 5.5, 9);
@@ -85,8 +82,6 @@ function changeCatWeight(weightParameter) {
     moodScore = 6;
     statusScore = 3;
     image.src = 'assets/img/image8.png';
-    var sound = document.getElementById('meow');
-    sound.play();
     console.log(cat);
     break;
     case 'medium' :

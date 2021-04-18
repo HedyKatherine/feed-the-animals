@@ -1,9 +1,12 @@
 body{
   margin: 1rem;
   padding: 1rem;
+  font-family: 'Nanum Gothic';
 }
 h1{
-  width: 20vw;
+  font-family: 'Jua';
+  font-size: 60px;
+  letter-spacing: 2px;
 }
 section{
   width: 60vw;
@@ -23,12 +26,14 @@ section{
 .bubble-speech:before {
     position: absolute;
     top: 7.4rem;
+    /* top: 7rem; */
     left: 15.5rem;
     content: '';
     border-top: 1.5rem solid #549F93;
     border-left: 1.5rem solid transparent;
     border-right: 1.5rem solid transparent;
     transform: rotate(-26deg);
+    /* transform: rotate(-30deg); */
   }
 
 /* le aside avec le compteur du score global */
