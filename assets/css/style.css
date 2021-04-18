@@ -1,6 +1,6 @@
 body{
-  /* margin: 1rem;
-  padding: 1rem; */
+  margin: 1rem;
+  padding: 1rem;
 }
 h1{
   width: 20vw;
@@ -11,13 +11,26 @@ section{
 #place_for_messages{
   display: none;
 }
-#hidden-section{
-  width: 100vw;
-  height: 100vh;
-  background-color: red;
-  color: #fff;
-  display: none;
+/* la création d'une bulle de text */
+.bubble-speech{
+  height: 15vh;
+  background: #549F93;
+  border-radius: 50%;
+  font-size: 2rem;
+  color: #FFF;
+  letter-spacing: 1px;
 }
+.bubble-speech:before {
+    position: absolute;
+    top: 7.4rem;
+    left: 15.5rem;
+    content: '';
+    border-top: 1.5rem solid #549F93;
+    border-left: 1.5rem solid transparent;
+    border-right: 1.5rem solid transparent;
+    transform: rotate(-26deg);
+  }
+
 /* le aside avec le compteur du score global */
 #countDown{
   float: left;
