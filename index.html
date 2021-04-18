@@ -10,48 +10,50 @@
   <title>feed the animals</title>
 </head>
 <body>
+  <h1 class="mb-5 mx-auto">Kitty the cat</h1>
+  <!-- la section qui contient le compteur, image et les barres de progression -->
   <section class="container-fluid">
     <div class="row d-flex justify-content-between">
-      <div class="col-md-1">
+      <div id="countDown" class="col-md-3">
+        <h3>seconds left:<span id="time-left">10</span></h3>
+        <button id="start-button">start</button>
       </div>
-      <!-- <div id="countDown" class="col-md-4">
-        <h3>seconds left:<span id="time-left">90</span></h3>
-        <button id="start-button" onclick="displayFoodAndActivity()">start</button>
-      </div> -->
-      <div class="col-md-4">
+      <div class="col-md-3">
         <div id="image">
           <h2 class="col-md-12">notre petit chaton</h2>
           <div class="col-md-12 col-lg-6 col-xl-4">
             <img id="image1" src="assets/img/image1.png" alt="un chaton" width="300">
-            <p>Votre score: </p>
-            <p id="score">0</p>
+            <p id="score" hidden>0</p>
           </div>
         </div>
         <!-- ici on peux garder de l'espace pour afficher nos petits messages rigolos et le score -->
+        <p id="moodText"></p>
+        <!-- cette div est cachée (display none) pour eviter le scroll-->
         <div id="place_for_messages">
-          <p id="moodText"></p>
           <p id="progressbar-score"></p>
-          <p id="weightbar-score">WEIGHT bar</p>
+          <p id="weightbar-score"></p>
           <p id="statusbar-score"></p>
         </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-3">
         <!-- ici il y a notre bar de progression -->
         <!-- la bar qui montre l'humeur -->
           <p class="mt-1">Humeur: </p>
           <div id="myProgress">
-            <div id="myBar"></div>
+            <div class="text-center text-uppercase font-weight-bold" id="myBar"></div>
           </div>
         <!-- la bar qui montre le poids -->
         <p  class="mt-4">Poids: </p>
-        <div id="weightProgressBar">
-          <div id="weightBar"></div>
+        <div class="" id="weightProgressBar">
+          <div class="text-center text-uppercase font-weight-bold" id="weightBar"></div>
         </div>
         <!-- la bar qui montre le status -->
         <p  class="mt-4">Status: </p>
         <div id="statusProgressBar">
-          <div id="statusBar"></div>
+          <div class="text-center text-uppercase font-weight-bold" id="statusBar"></div>
         </div>
+        </div>
+        <div class="col-md-3">
           <!-- ici on met la score global intéractive -->
           <div id="star_score" class="col-md-12">
             <p id="yourGlobalScore"></p>
@@ -87,6 +89,9 @@
         <i class="fas fa-5x fa-tv" onclick="changeCatWeight('chonk')"></i>
       </div>
     </div>
+  </section>
+  <section>
+    <p id="final-message"></p>
   </section>
   <audio id="brokenPlate" src="assets/sounds/broken-plate.wav"></audio>
   <audio id="growl" src="assets/sounds/growl.wav"></audio>
