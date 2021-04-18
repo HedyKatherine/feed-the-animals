@@ -16,20 +16,21 @@
   <!-- la section qui contient le compteur, image et les barres de progression -->
   <section class="container-fluid">
     <div class="row d-flex justify-content-between">
-      <div id="countDown" class="col-md-3">
+      <div id="countDown" class="col-md-2">
         <h3>seconds left:<span id="time-left">30</span></h3>
         <button id="start-button">start</button>
       </div>
-      <div class="col-md-3">
-        <div id="image">
-          <h2 class="col-md-12">notre petit chaton</h2>
+      <!-- ici on peux garder de l'espace pour afficher nos petits messages rigolos et le score -->
+      <div class="col-md-2 bubble-speech d-flex justify-content-center">
+        <p class="mt-3 text-center" id="moodText">Ecoutez ce que le chaton vous dit</p>
+      </div>
+      <div class="col-md-3 d-flex justify-content-center">
+        <div id="image" class="mt-5">
           <div class="col-md-12 col-lg-6 col-xl-4">
             <img id="image1" src="assets/img/image1.png" alt="un chaton" width="300">
             <p id="score" hidden>0</p>
           </div>
         </div>
-        <!-- ici on peux garder de l'espace pour afficher nos petits messages rigolos et le score -->
-        <p id="moodText"></p>
         <!-- cette div est cachée (display none) pour eviter le scroll-->
         <div id="place_for_messages">
           <p id="progressbar-score"></p>
@@ -55,14 +56,14 @@
           <div class="text-center text-uppercase font-weight-bold" id="statusBar"></div>
         </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-2">
           <!-- ici on met la score global intéractive -->
           <div id="star_score" class="col-md-12">
             <p id="yourGlobalScore"></p>
             <p id="yourScore" class="mx-auto text-center">Your Global Score</p>
             <div id="yourSumScore"></div>
             <p id="progressSumScore"></p>
-            <p id="weightSumScore"></p>
+            <p id="weightSumScore" hidden></p>
           </div>
         </div>
       </div>
