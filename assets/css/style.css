@@ -1,9 +1,22 @@
 body{
-  margin: 1rem;
-  padding: 1rem;
+  /* margin: 1rem;
+  padding: 1rem; */
+}
+h1{
+  width: 20vw;
 }
 section{
   width: 60vw;
+}
+#place_for_messages{
+  display: none;
+}
+#hidden-section{
+  width: 100vw;
+  height: 100vh;
+  background-color: red;
+  color: #fff;
+  display: none;
 }
 /* le aside avec le compteur du score global */
 #countDown{
@@ -70,7 +83,7 @@ section{
 #myProgress,
 #weightProgressBar,
 #statusProgressBar{
-  width: 50%;
+  width: 90%;
   background-color: #ddd;
   height: 7vh;
   border-radius: .4rem;
@@ -78,8 +91,12 @@ section{
 #myBar,
 #weightBar,
 #statusBar{
-  width: 3%;
+  width: 5%;
   height: 7vh;
   background-color: #4CAF50;
   border-radius: .4rem;
+}
+#choose_food,
+#choose_activity{
+  height: 20vh;
 }
