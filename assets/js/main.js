@@ -222,7 +222,7 @@ function insertInStatusBar(){
     }
 }
 // COUNTDOWN function
-var seconds = 5;
+var seconds = 30;
 var btn = document.getElementById('btn');
 var btn_reset = document.getElementById('btn_reset');
 var showCount = document.getElementById('showCount')
@@ -232,7 +232,7 @@ var timerLimit;
   timerLimit = setInterval(() => {
   if(seconds <1){
     clearInterval(timerLimit);
-    alert('Game Over: press reset');
+    alert('Game Over: refresh to start');
     showCount.innerHTML ='Game over';
     btn.style.display = 'inline';
     }else{
@@ -240,9 +240,9 @@ var timerLimit;
       document.getElementById('showCount').innerHTML = --seconds;
       btn_reset.style.display = 'inline';
     }
-     var reset = document.getElementById('btn_reset');
+    var reset = document.getElementById('btn_reset');
     reset.onclick = function () {
-      seconds = 5;
+      seconds = 30;
       clearInterval();
       interval = null;
        showCount.innerHTML = ' ';
@@ -250,27 +250,6 @@ var timerLimit;
     }
   }, 1000);
 })
-
-
-
-// document.addEventListener('DOMContentLoaded', () =>{
-//   const timeLeftDisplay = document.getElementById('time-left');
-//   const startBtn = document.getElementById('start-button');
-//   let timeLeft = 30;
-//   function countDown(){
-//     setInterval(function(){
-//       if (timeLeft <= 0) {
-//         clearInterval(timeLeft = 0);
-        // document.getElementById('hidden-section').style.display = 'block';
-        // document.getElementById('final-message').innerHTML = 'l\'humeur du chat est ' + cat.mood + ' son poid est ' + cat.weight + ' le status: ' + cat.status;
-//       }
-//       timeLeftDisplay.innerHTML = timeLeft;
-//       timeLeft -=1;
-//     },1000);
-//   }
-//   startBtn.addEventListener('click', countDown );
-//   console.log(startBtn);
-// });
 // la partie du code permettant d'avoir la somme totale des points
 let sum = 0;
 let yourGlobalScore = [];

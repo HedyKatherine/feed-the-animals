@@ -37,9 +37,9 @@ section{
   }
 
 /* le aside avec le compteur du score global */
-#countDown{
+/* #countDown{
   float: left;
-}
+} */
 #star_score{
   float:right;
   margin: 2rem;
