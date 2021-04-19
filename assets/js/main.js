@@ -5,13 +5,6 @@ let cat = {
   weight : 'neutral',
   status : 'neutral',
 };
-// our second object
-let dog = {
-  name : 'Doggy',
-  mood : 'neutral',
-  weight : 'neutral',
-  status : 'neutral',
-};
 // boucle pour afficher les messages
 const funnyMessages = ['Yummy! One more please!', 'Disgusting! Eat it by yourself!', 'You\'re so boring!', 'Go ahead! Continue!', 'Wow I can\'t stop!'];
 for (message of funnyMessages){
@@ -33,9 +26,13 @@ function moodReaction(parametreMood){
     console.log(cat);
   }else if(parametreMood == 'furious'){
     reactionMessages('assets/img/image7.png', funnyMessages[1], 'Creepster', -8, -2, -9);
+    let angryCatSound = document.getElementById('growl');
+    angryCatSound.play();
     console.log(cat);
   }else if(parametreMood == 'moody'){
     reactionMessages('assets/img/image5.png', funnyMessages[2], 'Fontdiner Swanky', -7, 1, 0);
+    let upsetCatSound = document.getElementById('brokenPlate');
+    upsetCatSound.play();
     console.log(cat);
   }else if(parametreMood == 'excited'){
     reactionMessages('assets/img/image4.png', funnyMessages[3], 'Luckiest Guy', 4, 5.5, 9);
@@ -85,8 +82,6 @@ function changeCatWeight(weightParameter) {
     moodScore = 6;
     statusScore = 3;
     image.src = 'assets/img/image8.png';
-    var sound = document.getElementById('meow');
-    sound.play();
     console.log(cat);
     break;
     case 'medium' :
@@ -227,24 +222,34 @@ function insertInStatusBar(){
     }
 }
 // COUNTDOWN function
-document.addEventListener('DOMContentLoaded', () =>{
-  const timeLeftDisplay = document.getElementById('time-left');
-  const startBtn = document.getElementById('start-button');
-  let timeLeft = 30;
-  function countDown(){
-    setInterval(function(){
-      if (timeLeft <= 0) {
-        clearInterval(timeLeft = 0);
-        // document.getElementById('hidden-section').style.display = 'block';
-        // document.getElementById('final-message').innerHTML = 'l\'humeur du chat est ' + cat.mood + ' son poid est ' + cat.weight + ' le status: ' + cat.status;
-      }
-      timeLeftDisplay.innerHTML = timeLeft;
-      timeLeft -=1;
-    },1000);
-  }
-  startBtn.addEventListener('click', countDown );
-  console.log(startBtn);
-});
+var seconds = 30;
+var btn = document.getElementById('btn');
+var btn_reset = document.getElementById('btn_reset');
+var showCount = document.getElementById('showCount')
+btn.addEventListener('click', function (e) {
+  // e.preventDefault()
+var timerLimit;
+  timerLimit = setInterval(() => {
+  if(seconds <1){
+    clearInterval(timerLimit);
+    alert('Game Over: refresh to start \n ' + 'Voici ' + cat.name + '\n son humeur est: ' + cat.mood + '\n son poid est: ' + cat.weight + '\n le status: ' + cat.status);
+    showCount.innerHTML ='Game over';
+    btn.style.display = 'inline';
+    }else{
+      btn.style.display='none';
+      document.getElementById('showCount').innerHTML = --seconds;
+      btn_reset.style.display = 'inline';
+    }
+    var reset = document.getElementById('btn_reset');
+    reset.onclick = function () {
+      seconds = 30;
+      clearInterval();
+      interval = null;
+       showCount.innerHTML = ' ';
+
+    }
+  }, 1000);
+})
 // la partie du code permettant d'avoir la somme totale des points
 let sum = 0;
 let yourGlobalScore = [];
