@@ -79,7 +79,7 @@ function changeCatWeight(weightParameter) {
     reaction = 'I\'m so sleepy...zzz...';
     reactionFontFamily = 'Bubblegum sans';
     weightScore = 3;
-    moodScore = 6;
+    moodScore = -3;
     statusScore = 3;
     image.src = 'assets/img/image8.png';
     console.log(cat);
