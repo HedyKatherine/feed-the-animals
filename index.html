@@ -2,29 +2,35 @@
 <html dir="ltr" lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <script src="https://kit.fontawesome.com/e206f53c0e.js" crossorigin="anonymous"></script>
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Creepster&family=Fontdiner+Swanky&family=Luckiest+Guy&family=Sniglet:wght@400;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Creepster&family=Fontdiner+Swanky&family=Jua&family=Luckiest+Guy&family=Nanum+Gothic&family=Rum+Raisin&family=Sniglet:wght@400;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/countdown.css">
   <title>feed the animals</title>
 </head>
 <body>
-  <h1 class="mb-5 mx-auto">Kitty the cat</h1>
+  <section class="container">
+    <div class="row">
+      <div class="col-md-12 d-flex justify-content-center">
+        <h1 class="mb-4 mx-auto">Kitty the cat</h1>
+      </div>
+    </div>
+  </section>
   <!-- la section qui contient le compteur, image et les barres de progression -->
   <section class="container-fluid">
     <div class="row d-flex justify-content-between">
         <div id="wrapper" class="col-md-2">
           <div id="showCount"></div>
           <button type="button" id="btn" class="btnDisable text-center" >PLAY</button>
-          <button type="button" id="btn_reset" class="btnDisable" >RESET</button>
+          <button type="button" id="btn_reset" class="btnDisable" hidden>RESET</button>
         </div>
       <!-- ici on peux garder de l'espace pour afficher nos petits messages rigolos et le score -->
       <div class="col-md-2 bubble-speech d-flex justify-content-center">
-        <p class="mt-3 text-center" id="moodText">Ecoutez ce que le chaton vous dit</p>
+        <p class="mt-3 text-center" id="moodText">Listen to me!</p>
       </div>
       <div class="col-md-3 d-flex justify-content-center">
         <div id="image" class="mt-5">
