@@ -25,7 +25,7 @@
     <div class="row d-flex justify-content-between">
         <div id="wrapper" class="col-md-2">
           <div id="showCount"></div>
-          <button type="button" id="btn" class="btnDisable text-center" >PLAY</button>
+          <button type="button" id="btn" class="btn-lg p-3 rounded-circle btn-danger font-weight-bold btnDisable" onclick="hideText()">PLAY</button>
           <button type="button" id="btn_reset" class="btnDisable" hidden>RESET</button>
         </div>
       <!-- ici on peux garder de l'espace pour afficher nos petits messages rigolos et le score -->
@@ -88,6 +88,19 @@
         <i class="fas fa-5x fa-pizza-slice" onclick="moodReaction('overexcited')"></i>
       </div>
     </div>
+  </section>
+  <section id="game_rules" class="container-fluid">
+      <div class="row">
+          <div class="col-md-12 d-flex flex-column justify-content-center m-5">
+            <p class="align-items-center mt-5">Vous avez 30 secondes pour équilibrer : l'humeur, le poids et la satiété du chat</p>
+            <ol>
+              <li>Appuyez sur start</li>
+              <li>Choisissez parmi cinq aliments et cinq activités</li>
+              <li>Un modal affichera votre résultat final</li>
+              <li>Rafraîchissez la page pour recommencer</li>
+            </ol>
+          </div>
+      </div>
   </section>
   <section id="choose_activity" class="container-fluid">
     <div class="row d-flex justify-content-center">
