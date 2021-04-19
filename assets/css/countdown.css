@@ -18,18 +18,12 @@
     width:125px;
     padding:10px;
   }
-  .btnEnable {
-    background-color:#616247FF;
-    border:3px solid white;
-    border-radius: 8px;
-    color:white;
-    cursor:pointer;
-  }
+
   .btnDisable {
     background-color:#616247FF;
     border:3px solid white;
     color:white;
-    padding: 18px;
+    /* padding: 18px; */
     cursor:wait;
     border-radius: 8px;
   }
