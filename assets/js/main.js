@@ -232,7 +232,7 @@ var timerLimit;
   timerLimit = setInterval(() => {
   if(seconds <1){
     clearInterval(timerLimit);
-    alert('Game Over: refresh to start \n humeur du chat est ' + cat.mood + ' son poid est ' + cat.weight + ' le status: ' + cat.status);
+    alert('Game Over: refresh to start \n ' + 'Voici ' + cat.name + '\n son humeur est: ' + cat.mood + '\n son poid est: ' + cat.weight + '\n le status: ' + cat.status);
     showCount.innerHTML ='Game over';
     btn.style.display = 'inline';
     }else{
