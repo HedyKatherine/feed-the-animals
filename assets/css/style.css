@@ -117,7 +117,6 @@ section{
 #choose_food,
 #choose_activity{
   display: none;
-
   height: 20vh;
 }
 #game_rules{
