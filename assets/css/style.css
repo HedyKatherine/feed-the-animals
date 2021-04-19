@@ -116,5 +116,12 @@ section{
 }
 #choose_food,
 #choose_activity{
+  display: none;
+
   height: 20vh;
+}
+#game_rules{
+  width: 50vw;
+  margin: 0 auto;
+  font-size: 1.5rem;
 }
