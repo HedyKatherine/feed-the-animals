@@ -230,7 +230,7 @@ function hideText() {
 var seconds = 30;
 var btn = document.getElementById('btn');
 var btn_reset = document.getElementById('btn_reset');
-var showCount = document.getElementById('showCount')
+var showCount = document.getElementById('showCount');
 btn.addEventListener('click', function (e) {
   // e.preventDefault()
 var timerLimit;
