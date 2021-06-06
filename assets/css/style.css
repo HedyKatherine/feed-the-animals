@@ -9,10 +9,14 @@ h1{
   letter-spacing: 2px;
 }
 section{
+  margin-bottom: 2rem;
   width: 60vw;
 }
 #place_for_messages{
   display: none;
+}
+#image{
+  margin-top: 2rem;
 }
 /* la création d'une bulle de text */
 .bubble-speech{
@@ -22,28 +26,9 @@ section{
   font-size: 2rem;
   color: #FFF;
   letter-spacing: 1px;
+  margin-top: 1.5rem;
 }
-.bubble-speech:before {
-    position: absolute;
-    top: 7.4rem;
-    /* top: 7rem; */
-    left: 15.5rem;
-    content: '';
-    border-top: 1.5rem solid #549F93;
-    border-left: 1.5rem solid transparent;
-    border-right: 1.5rem solid transparent;
-    transform: rotate(-26deg);
-    /* transform: rotate(-30deg); */
-  }
 
-/* le aside avec le compteur du score global */
-/* #countDown{
-  float: left;
-} */
-#star_score{
-  float:right;
-  margin: 2rem;
-}
 /* les icons */
 .fas{
   margin: 5rem;
@@ -54,11 +39,6 @@ section{
   opacity: .9;
   scale: 1.5;
 }
-/* cacher les icons des nurriture et activités */
-/* .some{
-  visibility: hidden;
-} */
-
 #yourSumScore{
   margin: 0 auto;
   width: 8rem;
@@ -114,13 +94,67 @@ section{
   background-color: #4CAF50;
   border-radius: .4rem;
 }
-#choose_food,
-#choose_activity{
+#choose_food{
   display: none;
   height: 20vh;
 }
 #game_rules{
   width: 50vw;
   margin: 0 auto;
+  margin-top: 5rem;
   font-size: 1.5rem;
+}
+@media all and (max-width: 1000px) {
+  .fa-5x{
+   scale: 1;
+   margin: 1%;
+  }
+  .fas:hover{
+   scale: 1.1;
+  }
+}
+@media all and (max-width: 600px) {
+  h1{
+    font-size: 2.8rem;
+    margin-bottom: 0;
+  }
+  .fa-5x{
+   scale: .7;
+   margin: -1%;
+  }
+  .fas:hover{
+   scale: 1.05;
+  }
+  .bubble-speech{
+    margin-top: 4.5rem;
+    font-size: 1.5rem;
+  }
+  #image{
+    margin-top: 0;
+  }
+  #yourSumScore{
+    width: 4rem;
+    height: 4rem;
+    font-size: 1.5rem;
+  }
+  #feedThem{
+    width: 100%;
+  }
+  #game_rules{
+    width: 100%;
+    margin-top: 0;
+  }
+  .rules{
+    /* width: 100vw; */
+    margin: 0;
+    flex-direction: row;
+    font-size: 1rem;
+  }
+  .rules p{
+  }
+}
+@media all and (max-width: 400px) {
+  h1{
+    font-size: 2.1rem;
+  }
 }

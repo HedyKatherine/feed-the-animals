@@ -225,7 +225,6 @@ function insertInStatusBar(){
 function hideText() {
   document.getElementById('game_rules').style.display = 'none';
   document.getElementById('choose_food').style.display = 'block';
-  document.getElementById('choose_activity').style.display = 'block';
 }
 var seconds = 30;
 var btn = document.getElementById('btn');
